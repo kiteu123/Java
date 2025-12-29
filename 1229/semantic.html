@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Add your CSS (cascade style sheet) */
+        * {
+            margin: 0;
+            padding: 0;
+            /* 모든 태그에 바깥여백 0 안여백 0 */
+        }
+
+        header {
+            background-color: lightgray;
+            /* 배경색 */
+            height: 100px;
+            /* 높이 */
+            text-align: center;
+            /* 가운데 정렬 */
+            line-height: 100px;
+            /* 줄간격 */
+            font-size: 30px;
+            /* 기본 글자크기는 16px */
+        }
+
+        header h1 {
+            line-height: 100px;
+            font-size: 30px;
+        }
+
+        nav {
+            background-color: pink;
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            /* ul 블릿제거 */
+        }
+
+        nav ul li {
+            float: left;
+            /* li를 가로로 배치 */
+            width: 25%;
+            text-align: center;
+            /* 가운데 정렬 */
+            line-height: 50px;
+            /* 줄간격 */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            /* 밑줄 제거 */
+            color: black
+        }
+
+        nav ul li a:hover {
+            color: red;
+        }
+
+        main {
+            background-color: lightblue;
+            height: 500px;
+
+        }
+
+        section {
+            background-color: yellowgreen;
+            height: 500px;
+            width: 75%;
+            float: left;
+        }
+
+        aside {
+            background-color: lightcoral;
+            height: 500px;
+            width: 25%;
+            float: left;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>This is a Semantic Header</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="basic.html">block</a></li>
+            <li><a href="basic1(인라인).html">inline</a></li>
+            <li><a href="basic2(인라인블럭).html">inline-block</a></li>
+            <li><a href="legacy.html">layout</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Section Title</h2>
+            <p>Section content</p>
+        </section>
+        <aside>
+            <h2>Aside Title</h2>
+            <p>Aside content</p>
+        </aside>
+    </main>
+    <footer>
+        <p>Footer content</p>
+    </footer>
+</body>
+
+</html>

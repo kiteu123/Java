@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    /* 전체 폰트 & 배경 */
+    body {
+        font-family: "Noto Sans KR", Arial, sans-serif;
+        background-color: #f4f6f8;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* 헤더 */
+    header {
+        text-align: center;
+        padding: 40px 20px;
+        background: #222;
+        color: white;
+    }
+
+    header img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        margin: 20px 0;
+        object-fit: cover;
+    }
+
+    header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    /* 메인 레이아웃 */
+    main {
+        display: flex;
+        gap: 32px;
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    /* 왼쪽 섹션 */
+    section {
+        flex: 3;
+    }
+
+    article {
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        height: 300px;
+    }
+
+    article h2 {
+        margin-bottom: 16px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 8px;
+    }
+
+    /* 기본 정보 리스트 */
+    article ul li {
+        margin-bottom: 10px;
+    }
+
+    /* 오른쪽 어사이드 */
+    aside {
+        flex: 1;
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        height: 300px
+    }
+
+    aside h2 {
+        margin-bottom: 16px;
+    }
+
+    /* 스킬 리스트 */
+    aside ul li {
+        background: #f1f3f5;
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-weight: 500;
+    }
+
+    /* 푸터 */
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+        font-size: 0.9rem;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>My Profile</h1>
+        <img src="images/profileavatar.png" alt="">
+        <p>Hi! I'm a student who wants to be a web developer.</p>
+    </header>
+    <!-- basic info -->
+    <main>
+        <section>
+            <article>
+                <h2>Basic Information</h2>
+                <ul>
+                    <li>Name : 강연우</li>
+                    <li>Age : 28</li>
+                    <li>Address : 서울시 영등포구 대림동</li>
+                    <li>Phone : 010-5656-4267</li>
+                    <li>Email : kiteu@naver.com</li>
+                </ul>
+            </article>
+        </section>
+        <aside>
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2025 Kang Yeonwoo</p>
+    </footer>
+</body>
+
+</html>
