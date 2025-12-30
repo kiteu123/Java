@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 800px;
+        margin: 60px auto 0;
+    }
+
+    table {
+        border-collapse: collapse;
+        border: 1px solid #000;
+        text-align: center;
+    }
+
+    th,
+    td {
+        border: 1px solid #000;
+        padding: 10px 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(107, 112, 128);
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+
+    caption {
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgb(85, 85, 192);
+    }
+
+    th {
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>카페 메뉴 가격표</h1>
+        <p>신선한 원두로 직접 로스팅한 <strong>프리미엄 커피</strong>와 다양한 음료를 제공합니다.</p>
+        <p>모든 음료는 <em>100% 아라비카 원두</em>를 사용하며, <br> 고객님의 건강을 위해 <strong>무첨가 설탕 옵션</strong>
+            도 선택하실 수 있습니다.</p>
+        <table>
+            <caption>음료 메뉴 및 가격표</caption>
+            <thead>
+                <colgroup>
+                    <col style="width: 150px;">
+                    <col style="width: 200px;">
+                    <col style="width: 150px;">
+                    <col style="width: 150px;">
+                </colgroup>
+                <tr style="background-color: rgb(58, 58, 163);">
+                    <th>카테고리</th>
+                    <th>메뉴명</th>
+                    <th>사이즈</th>
+                    <th>가격</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3">커피</td>
+                    <td>아메리카노</td>
+                    <td>Regular</td>
+                    <td>4,500원</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+
+                    <td>카페라떼</td>
+                    <td>Regular</td>
+                    <td>5,000원</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+
+                    <td>카푸치노</td>
+                    <td>Regular</td>
+                    <td>5,200원</td>
+                    <td>시나몬 추가</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">차</td>
+                    <td>녹차</td>
+                    <td>Regular</td>
+                    <td>4,000원</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+
+                    <td>캐모마일</td>
+                    <td>Regular</td>
+                    <td>4,000원</td>
+                    <td>수면에 좋음</td>
+                </tr>
+                <tr>
+
+                    <td>얼그레이</td>
+                    <td>Regular</td>
+                    <td>4,500원</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">스무디</td>
+                    <td>딸기 스무디</td>
+                    <td>Large</td>
+                    <td>6,500원</td>
+                    <td style="color: red; font-weight: bold;">시즌 한정</td>
+                </tr>
+                <tr>
+
+                    <td>망고 스무디</td>
+                    <td>Large</td>
+                    <td>6,500원</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
