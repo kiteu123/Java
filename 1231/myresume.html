@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Pretendard", "Noto Sans KR", sans-serif;
+        }
+
+        body {
+            background-color: #f5f6f8;
+            padding: 40px;
+        }
+
+        .resume {
+            width: 800px;
+            margin: auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .resume-header {
+            background: #2f2f2f;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .resume-header h1 {
+            font-size: 36px;
+            letter-spacing: 0.3rem;
+        }
+
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #333;
+            border-left: 6px solid #4a6cf7;
+            padding-left: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 12px 10px;
+            font-size: 15px;
+            color: #444;
+            vertical-align: middle;
+        }
+
+        .label {
+            width: 120px;
+            font-weight: 600;
+            color: #666;
+            background: #f3f4f6;
+            /* border-radius: 6px;  */
+            text-align: center;
+        }
+
+        .value {
+            padding-left: 15px;
+        }
+
+        .photo {
+            text-align: center;
+        }
+
+        .photo img {
+            width: 120px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+
+        .list-table td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        a {
+            color: #4a6cf7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume">
+
+        <div class="resume-header">
+            <h1>이 력 서</h1>
+        </div>
+
+        <div class="section">
+            <h2>기본 정보</h2>
+            <table>
+                <tr>
+                    <td class="label">성명</td>
+                    <td class="value">강연우</td>
+                    <td class="label">연락처</td>
+                    <td class="value">010-5656-4267</td>
+                    <td rowspan="4" class="photo">
+                        <img src="images/profile.png" alt="profile">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">이메일</td>
+                    <td class="value">kiteu@naver.com</td>
+                    <td class="label">생년월일</td>
+                    <td class="value">1998.05.10</td>
+                </tr>
+                <tr>
+                    <td class="label">주소</td>
+                    <td class="value" colspan="3">
+                        서울특별시 영등포구 신길로 29
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">GitHub</td>
+                    <td class="value" colspan="3">
+                        <a href="https://github.com/kiteu123" target="_blank">
+                            github.com/kiteu123
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>학력 사항</h2>
+            <table class="list-table">
+                <tr>
+                    <td class="center">2017.03 ~ 2025.09</td>
+                    <td>성공회대학교 소프트웨어공학과</td>
+                    <td class="center">졸업</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>경력 사항</h2>
+            <table class="list-table">
+                <tr>
+                    <td class="center">-</td>
+                    <td>-</td>
+                    <td class="center">-</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        letter-spacing: 1rem;
+        color: white;
+        background-color: rgb(77, 76, 76);
+    }
+
+    table {
+        border: 3px solid rgb(77, 76, 76);
+        width: 800px;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        border: 1px solid grey;
+    }
+
+    .category {
+        text-align: left;
+        border-left: 5px solid black;
+        background: rgb(237, 237, 253);
+    }
+
+    .title-bg {
+        font-weight: bold;
+        background-color: rgb(216, 216, 216);
+        text-align: center;
+    }
+
+    .school {
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .cen {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <table>
+        <tr>
+            <th colspan="5" class="header">
+                <h1>이력서</h1>
+            </th>
+        </tr>
+        <tr>
+            <td colspan="5" class="category">
+                <h2>기본 정보</h2>
+            </td>
+        </tr>
+        <tr>
+            <td class="title-bg">성명</td>
+            <td>강연우</td>
+            <td class="title-bg">연락처</td>
+            <td>010-5656-4267</td>
+            <td rowspan="4" class="photo-cell"><img src="images/profile.png" alt="" width="100"></td>
+        </tr>
+        <tr>
+            <td class="title-bg">이메일</td>
+            <td>kiteu@naver.com</td>
+            <td class="title-bg">생년월일</td>
+            <td>1998. 05. 10</td>
+
+        </tr>
+        <tr>
+            <td class="title-bg">주소</td>
+            <td colspan="3">서울특별시 영등포구 신길로 29</td>
+        </tr>
+        <tr>
+            <td class="title-bg">블로그/Github</td>
+            <td colspan="3"><a href="https://github.com/kiteu123/" target="_blank">github.com/kiteu123</a></td>
+        </tr>
+        <tr>
+            <td colspan="5" class="category">
+                <h2>학력 사항</h2>
+            </td>
+        </tr>
+        <tr>
+            <td class="title-bg">기간</td>
+            <td colspan="3" class="school cen">학교명 및 전공</td>
+            <td class="title-bg">졸업여부</td>
+        </tr>
+        <tr>
+            <td class="cen">2017.03 ~ <br>2025.09 </td>
+            <td colspan="3">성공회대학교 소프트웨어공학과</td>
+            <td class="cen">졸업</td>
+        </tr>
+        <tr>
+            <td colspan="5" class="category">
+                <h2>경력 사항</h2>
+            </td>
+        </tr>
+        <tr>
+            <td class="title-bg">근무 기간</td>
+            <td colspan="3" class="school cen">회사명</td>
+            <td class="title-bg">업무 내용</td>
+        </tr>
+        <tr>
+            <td class="cen"></td>
+            <td colspan="3"></td>
+            <td class="cen"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
