@@ -1,4 +1,4 @@
-public class Method3 {
+public class Method3_1 {
     public static void main(String[] args) {
         printName("홍길동");
     }
