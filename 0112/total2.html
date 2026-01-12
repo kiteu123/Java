@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: green;
+            font-size: 20px;
+        }
+
+        #title {
+            color: orange;
+        }
+
+        ul.menu>li {
+            border: 1px solid black;
+            /* float: left;  */
+        }
+
+        a:link {
+            color: black;
+        }
+
+        a:visited {
+            color: black;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        a:active {
+            background-color: orange;
+        }
+
+        ul.menu>li:nth-child(1) {
+            background-color: yellow;
+        }
+
+        ul.menu::after {
+            content: "나는 맨 뒤";
+        }
+
+        ul.menu::before {
+            content: "나는 맨 앞"
+        }
+
+        .p1 {
+            border: 2px solid red;
+        }
+
+        .p2 {
+            border: 2px dashed blue;
+        }
+
+        .p3 {
+            border: 2px dotted green;
+        }
+
+        .p4 {
+            border: 3px double red;
+        }
+
+        .p5 {
+            border: 10px groove green;
+        }
+
+        .p6 {
+            border: 10px ridge green;
+        }
+
+        .p7 {
+            border: 10px outset green;
+        }
+
+        .p8 {
+            border: 10px inset green;
+        }
+    </style>
+</head>
+
+<body>
+    <p style="color: red; font-size: 20px;">letter</p>
+    <h2>summary</h2>
+    <h3 id="title">first</h3>
+    <h3>first</h3>
+    <ul class="menu">
+        <li>
+            <a href="">Mainmenu1</a>
+            <ul>
+                <li><a href="Mainmenu1">Mainmenu1</a></li>
+                <li><a href="Mainmenu2">Mainmenu2</a></li>
+                <li><a href="Mainmenu3">Mainmenu3</a></li>
+                <li><a href="Mainmenu4">Mainmenu4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Mainmenu2</a>
+            <ul>
+                <li><a href="Mainmenu1">Mainmenu1</a></li>
+                <li><a href="Mainmenu2">Mainmenu2</a></li>
+                <li><a href="Mainmenu3">Mainmenu3</a></li>
+                <li><a href="Mainmenu4">Mainmenu4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Mainmenu3</a>
+            <ul>
+                <li><a href="Mainmenu1">Mainmenu1</a></li>
+                <li><a href="Mainmenu2">Mainmenu2</a></li>
+                <li><a href="Mainmenu3">Mainmenu3</a></li>
+                <li><a href="Mainmenu4">Mainmenu4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Mainmenu4</a>
+            <ul>
+                <li><a href="Mainmenu1">Mainmenu1</a></li>
+                <li><a href="Mainmenu2">Mainmenu2</a></li>
+                <li><a href="Mainmenu3">Mainmenu3</a></li>
+                <li><a href="Mainmenu4">Mainmenu4</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="p1">123</div>
+    <div class="p2">123</div>
+    <div class="p3">123</div>
+    <div class="p4">123</div>
+    <div class="p5">123</div>
+    <div class="p6">123</div>
+    <div class="p7">123</div>
+    <div class="p8">123</div>
+</body>
+
+</html>
