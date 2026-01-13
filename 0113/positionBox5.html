@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            position: absolute;
+        }
+
+        .box1 {
+            left: 0;
+            top: 0;
+        }
+
+        .box2 {
+            right: 0;
+            top: 0;
+        }
+
+        .box3 {
+            right: 0;
+            bottom: 0;
+        }
+
+        .box4 {
+            left: 0;
+            bottom: 0;
+            border-radius: 50%;
+        }
+
+        .box5 {
+            left: 50%;
+            top: 50%;
+            margin-left: -75px;
+            margin-top: -75px;
+            /* transform: translate(-50%, -50%);  */
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1">BOX1</div>
+    <div class="box box2">BOX2</div>
+    <div class="box box3">BOX3</div>
+    <div class="box box4">BOX4</div>
+    <div class="box box5">BOX CENTER</div>
+</body>
+
+</html>
