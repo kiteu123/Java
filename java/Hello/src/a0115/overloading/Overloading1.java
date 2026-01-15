@@ -1,0 +1,22 @@
+package a0115.overloading;
+
+public class Overloading1 {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        int result1 = calculator.add(3, 4);
+        int result2 = calculator.add(3, 4, 5);
+
+        System.out.println(result1);
+        System.out.println(result2);
+    }
+}
+
+class Calculator {
+    public int add(int i, int j) {
+        return i + j;
+    }
+
+    public int add(int i, int j, int k) {
+        return i + j + k;
+    }
+}
