@@ -27,7 +27,7 @@ public class StringEx7 {
         str = String.valueOf(10);
         str = String.valueOf(10.5);
 
-        str = "홍길동,이순신,유관순,안중근";
+        str = "홍길동,이순신,세종대왕,안중근";
         String[] arr = str.split(",");
         for (int i = 0; i < arr.length; i++) {
             System.out.println(i + "번 인덱스 값 = " + arr[i]);
