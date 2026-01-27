@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ballon {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            width: 120px;
+            height: 160px;
+            background: url(img/bg-main1.png) no-repeat 50% 50%;
+            animation: myani 3s infinite alternate;
+        }
+
+        @keyframes myani {
+            0% {
+                top: 20px;
+            }
+
+            100% {
+                top: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ballon"></div>
+
+</body>
+
+</html>
