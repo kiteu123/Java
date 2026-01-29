@@ -1,0 +1,24 @@
+package a0129;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.OptionalDouble;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
+
+public class Stream7 {
+    public static void main(String[] args) {
+        // IntStream
+        IntStream numbers = IntStream.of(1, 2, 3, 4, 5);
+        int sum = numbers.sum();
+        System.out.println(sum);
+        DoubleStream numbers1 = DoubleStream.of(1, 2, 3, 4, 5);
+        OptionalDouble avrDouble = numbers1.average();
+        System.out.println(avrDouble);
+
+        // 일반 스트림에서 합계/평균
+        List<Integer> numbers3 = Arrays.asList(1, 2, 3, 4, 5);
+        int sum2 = numbers3.stream().mapToInt(Integer::intValue).sum();
+        System.out.println(sum2);
+    }
+}
