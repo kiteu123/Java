@@ -1,0 +1,67 @@
+package a0204.exam;
+
+public class Exam01 {
+    public static void main(String[] args) {
+        int[] arr = { 3, 7, 2, 9, 1, 5, 8, 4, 6 };
+        int max = arr[0];
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        System.out.println("최댓값 : " + max);
+        System.out.println("최솟값 : " + min);
+
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        double average = (double) sum / arr.length;
+        System.out.printf("평균 : %.2f\n", average);
+
+        int evenCount = 0;
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                evenCount++;
+            }
+        }
+        int[] evenArr = new int[evenCount];
+        int index = 0;
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                evenArr[index++] = num;
+            }
+        }
+        System.out.print("짝수배열 : [");
+        for (int i = 0; i < evenArr.length; i++) {
+            System.out.print(evenArr[i]);
+            if (i < evenArr.length - 1) {
+                System.out.print(",");
+            }
+        }
+        System.out.println("]");
+
+        int[] sortedArr = arr.clone();
+        for (int i = 0; i < sortedArr.length; i++) {
+            for (int j = 0; j < sortedArr.length - 1 - i; j++) {
+                if (sortedArr[j] > sortedArr[j + 1]) {
+                    int temp = sortedArr[j];
+                    sortedArr[j] = sortedArr[j + 1];
+                    sortedArr[j + 1] = temp;
+                }
+            }
+        }
+        System.out.print("정렬된 배열 : [");
+        for (int i = 0; i < sortedArr.length; i++) {
+            System.out.print(sortedArr[i]);
+            if (i < sortedArr.length - 1) {
+                System.out.print(",");
+            }
+        }
+        System.out.println("]");
+    }
+}
