@@ -8,11 +8,18 @@ import java.util.Scanner;
 
 public class FlightManager {
     private static ArrayList<Flight> flights;
+
+    public static ArrayList<Flight> getFlights() {
+        return flights;
+    }
+
     private static ArrayList<Passenger> passengers;
+
+    
 
     private static Map<String, Flight> reservationMap = new HashMap<>();
 
-    // private static FileC fc = new FileC();
+    private static FileC fc = new FileC();
     Scanner sc = new Scanner(System.in);
 
     public FlightManager() {
@@ -135,7 +142,7 @@ public class FlightManager {
         checkPassword(index);
     }
 
-    private void checkPassword(int index) {
+    private boolean checkPassword(int index) {
         for (;;) {
             if (index != -1) {
                 System.out.print("결제 비밀번호 > ");
@@ -144,12 +151,13 @@ public class FlightManager {
                 if (passengers.get(index).getPw().equals(pw)) {
                     System.out.println("비밀번호가 일치합니다.");
                     System.out.println(ticketPrint(reservationMap, passengers.get(index).getName()));
+                    return true;
                 }
             }
         }
     }
 
-    private String ticketPrint(Map<String, Flight> reservationMap, String name) {
+    public String ticketPrint(Map<String, Flight> reservationMap, String name) {
         int index = -1;
         if (passengers != null) {
             for (int i = 0; i < passengers.size(); i++) {
@@ -180,5 +188,11 @@ public class FlightManager {
             }
         }
         return index;
+    }
+
+    public void ticketSave() {
+        int index = search("티켓조회");
+        checkPassword(index);
+        fc.ticketSaveFile(reservationMap, passengers.get(index).getName());
     }
 }

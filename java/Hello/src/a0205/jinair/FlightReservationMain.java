@@ -6,7 +6,7 @@ public class FlightReservationMain {
     public static void main(String[] args) {
         FlightManager fm = new FlightManager();
         Scanner sc = new Scanner(System.in);
-        // FileC fc = new FileC();
+        FileC fc = new FileC();
         System.out.println(fm.airplane);
         System.out.println("============== JavaAir 에 오신걸 환영합니다. ==============");
 
@@ -35,6 +35,11 @@ public class FlightReservationMain {
                 case 3:
                     fm.checkReservation();
                     break;
+                case 4:
+                    fm.ticketSave();
+                    break;
+                case 5:
+                    fc.upload();
                 default:
                     break;
             }
