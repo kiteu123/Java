@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numbers = [1, 2, 3];
+        let doubled = numbers.map(n => n * 2);
+        console.log(doubled);
+
+        let numbers1 = [1, 2, 3, 4, 5];
+        let even = numbers1.filter(n => n % 2 == 0);
+        console.log(even);
+
+        let users = [{ id: 1, name: "철수" }, { id: 2, name: "영희" }];
+
+        users.forEach(user => { console.log(`회원번호 : ${user.id}, 이름 : ${user.name}`) });
+        let idx = users.findIndex(u => u.name === "철수");
+        console.log(idx); // 0
+
+        let fruits = ["사과", "바나나", "딸기"];
+
+        console.log(fruits.includes("바나나")); // true
+        console.log(fruits.includes("포도"));   // false
+
+        let arr = ["Java", "Script"];
+        let str = arr.join(" ");
+
+        console.log(str); // "Java Script"
+
+    </script>
+</body>
+
+</html>
