@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롤링 배너</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            width: 80px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #banner_wrap {
+            width: 260px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        #frame {
+            width: 232px;
+            height: 54px;
+            position: relative;
+            margin: 10px auto;
+            border: 1px solid blue;
+            overflow: hidden;
+            /* 중요 */
+        }
+
+        #banner {
+            width: 9999px;
+            height: 54px;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+
+        p a {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>롤링 슬라이드 배너</h1>
+
+    <div id="banner_wrap">
+
+        <div id="frame">
+
+            <!-- ul로 감싸기 -->
+            <ul id="banner">
+
+                <!-- 원본 -->
+                <li><img src="images/pic_t1.jpg"></li>
+                <li><img src="images/pic_t2.jpg"></li>
+                <li><img src="images/pic_t3.jpg"></li>
+                <li><img src="images/pic_t4.jpg"></li>
+                <li><img src="images/pic_t5.jpg"></li>
+
+                <!-- 복제 -->
+                <li><img src="images/pic_t1.jpg"></li>
+                <li><img src="images/pic_t2.jpg"></li>
+                <li><img src="images/pic_t3.jpg"></li>
+
+            </ul>
+
+        </div>
+
+        <p>
+            <a href="" class="prev"><img src="images/prev_btn.png" alt=""></a>
+            <a href="" class="next"><img src="images/next_btn.png" alt=""></a>
+        </p>
+
+    </div>
+
+    <script>
+
+        const banner = document.getElementById('banner');
+        const items = document.querySelectorAll('#banner li');
+        let isMoving = false;
+        const nextBtn = document.querySelector('.next');
+        const prevBtn = document.querySelector('.prev');
+
+        const liWidth = 80;
+        const originCount = 5; // 원본 개수
+
+        let index = 0;
+
+
+        // ▶ 다음 버튼
+        function moveNext() {
+
+            index++;
+
+            banner.style.transition = '0.5s';
+            banner.style.marginLeft = -liWidth * index + 'px';
+
+            // 마지막 도달 시 순간 이동
+            if (index === originCount) {
+
+                setTimeout(() => {
+
+                    banner.style.transition = 'none';
+                    banner.style.marginLeft = '0px';
+                    index = 0;
+
+                }, 500);
+            }
+        }
+
+
+        // ▶ 다음 버튼 클릭
+        nextBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            moveNext();
+        });
+
+
+        // 이전 버튼
+        prevBtn.addEventListener('click', function (e) {
+
+            e.preventDefault();
+
+            if (index === 0) {
+
+                index = originCount;
+
+                banner.style.transition = 'none';
+                banner.style.marginLeft = -liWidth * index + 'px';
+            }
+
+            setTimeout(() => {
+
+                index--;
+
+                banner.style.transition = '0.5s';
+                banner.style.marginLeft = -liWidth * index + 'px';
+
+            }, 10);
+
+        });
+
+        setInterval(() => {
+            moveNext();
+        }, 1000);
+    </script>
+
+</body>
+
+</html>

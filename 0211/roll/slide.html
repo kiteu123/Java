@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            width: 1200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: #ccc;
+        }
+
+        #img_slider {
+            position: relative;
+            width: 1200px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #img_slider ul {
+            width: 6000px;
+            height: 300px;
+        }
+
+        #img_slider li {
+            float: left;
+        }
+
+        #img_slider p a {
+            position: absolute;
+            width: 38px;
+            height: 36px;
+            top: 40%;
+        }
+
+        #img_slider p a.prev {
+            left: 20px;
+        }
+
+        #img_slider p a.next {
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <div id="img_slider">
+        <ul id="banner">
+
+            <li><a href=""><img src="images/slide3.jpg" alt=""></a></li>
+
+            <li><a href=""><img src="images/slide1.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/slide2.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/slide3.jpg" alt=""></a></li>
+
+            <li><a href=""><img src="images/slide1.jpg" alt=""></a></li>
+
+        </ul>
+        <p>
+            <a href="" class="prev">
+                <img src="images/prev_btn.png" alt="">
+            </a>
+            <a href="" class="next"><img src="images/next_btn.png" alt=""></a>
+        </p>
+    </div>
+</body>
+<script>
+    const banner = document.getElementById('banner');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const slider = document.getElementById('img_slider');
+
+    const slideWidth = 1200;
+    const slideCount = 3;
+
+    let index = 1;
+    let isMoving = false;
+
+
+    banner.style.marginLeft = -slideWidth * index + 'px';
+
+
+    function moveSlide() {
+
+        if (isMoving) return;
+        isMoving = true;
+
+        banner.style.transition = '0.5s';
+        banner.style.marginLeft = -slideWidth * index + 'px';
+    }
+
+
+    banner.addEventListener('transitionend', () => {
+
+        if (index === slideCount + 1) {
+
+            banner.style.transition = 'none';
+            index = 1;
+            banner.style.marginLeft = -slideWidth * index + 'px';
+        }
+
+        if (index === 0) {
+
+            banner.style.transition = 'none';
+            index = slideCount;
+            banner.style.marginLeft = -slideWidth * index + 'px';
+        }
+
+        isMoving = false;
+    });
+
+
+    nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        index++;
+        moveSlide();
+    });
+
+
+    prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        index--;
+        moveSlide();
+    });
+
+
+    let autoSlide = setInterval(nextSlide, 3000);
+
+    function nextSlide() {
+        index++;
+        moveSlide();
+    }
+
+
+    slider.addEventListener('mouseenter', () => {
+        clearInterval(autoSlide);
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        autoSlide = setInterval(nextSlide, 3000);
+    });
+
+</script>
+
+
+</html>
