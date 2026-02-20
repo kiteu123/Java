@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Example</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+
+        /* 버튼 */
+        #open {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* 모달 배경 */
+        #modal_win {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba(0, 0, 0, 0.6);
+
+            display: none;
+            /* 기본 숨김 */
+            justify-content: center;
+            align-items: center;
+
+            z-index: 999;
+        }
+
+        /* 모달 박스 */
+        #modal {
+            width: 500px;
+            max-width: 90%;
+            height: 400px;
+
+            background-color: #fff;
+            padding: 30px;
+
+            border-radius: 8px;
+
+            position: relative;
+
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 내용 */
+        #modal p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* 닫기 버튼 */
+        #close {
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 열기 버튼 -->
+    <button id="open">모달 열기</button>
+
+
+    <!-- 모달 영역 -->
+    <div id="modal_win">
+
+        <div id="modal">
+
+            <p>
+                Integer pretium porttitor lectus at tempor. Donec nec cursus elit.
+                Maecenas ornare malesuada urna vitae lobortis. Sed vulputate sapien
+                quis purus cursus consectetur. Aenean nulla neque, egestas ut accumsan
+                nec, convallis vel enim. Vestibulum vehicula interdum diam nec condimentum.
+            </p>
+
+            <button id="close">닫기</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JS -->
+    <script>
+
+        const openBtn = document.getElementById('open');
+        const closeBtn = document.getElementById('close');
+        const modalWin = document.getElementById('modal_win');
+
+
+        /* 열기 */
+        openBtn.addEventListener('click', () => {
+            modalWin.style.display = 'flex';
+        });
+
+
+        /* 닫기 버튼 */
+        closeBtn.addEventListener('click', () => {
+            modalWin.style.display = 'none';
+        });
+
+
+        /* 배경 클릭 닫기 */
+        modalWin.addEventListener('click', (e) => {
+
+            if (e.target === modalWin) {
+                modalWin.style.display = 'none';
+            }
+
+        });
+
+
+        /* ESC 키로 닫기 */
+        document.addEventListener('keydown', (e) => {
+
+            if (e.key === 'Escape') {
+                modalWin.style.display = 'none';
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
