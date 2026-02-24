@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Xeicon Test</title>
+    <link rel="stylesheet" href="css/xeicon.css">
+</head>
+<style>
+    .xi-xpressengine,
+    .xi-arrow-left {
+        font-size: 40px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    ul li {
+        width: 100px;
+        height: 50px;
+        border: 1px solid #333;
+        margin-left: 50px;
+    }
+
+    ul li a {
+        display: block;
+        position: relative;
+        line-height: 50px;
+        color: #333;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    ul li:nth-child(1) a::before {
+        font-family: xeicon;
+        content: "\ec1f";
+        font-size: 24px;
+        padding-right: 5px;
+    }
+</style>
+
+<body>
+    <i class="xi-xpressengine"></i>
+    <i class="xi-arrow-left"></i>
+    <ul>
+        <li><a href="#">twitter</a></li>
+        <li><a href="#">facebook</a></li>
+        <li><a href="#">google</a></li>
+    </ul>
+
+</body>
+
+</html>
