@@ -668,6 +668,10 @@ nav ul:hover+.shadow {
     float: left;
 }
 
+.main_right_t ul li a:hover {
+    color: black;
+}
+
 .main_right_t ul li span {
     color: #7d7d7e;
     font-size: 14px;
