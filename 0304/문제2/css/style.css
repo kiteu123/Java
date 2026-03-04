@@ -1,0 +1,64 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: Arial, sans-serif;
+     padding: 50px;
+ }
+
+ .tab-menu {
+     display: flex;
+     margin-bottom: 20px;
+     position: relative;
+ }
+
+ .tab-btn {
+     padding: 10px 20px;
+     background-color: transparent;
+     cursor: pointer;
+     border: none;
+ }
+
+ .tab-btn.active {
+     font-weight: 600;
+     color: skyblue;
+     border-bottom: 3px solid skyblue;
+ }
+
+ .tab-content {
+     padding: 30px;
+     min-height: 150px;
+     position: relative;
+ }
+
+ .line {
+     width: 300px;
+     height: 1px;
+     background-color: #ccc;
+     position: absolute;
+     top: 40px;
+ }
+
+ .content {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+
+     opacity: 0;
+     visibility: hidden;
+     transform: translateY(30px);
+
+     transition:
+         opacity 0.3s ease,
+         transform 0.3s ease;
+ }
+
+ .content.active {
+     opacity: 1;
+     visibility: visible;
+     transform: translateY(0);
+ }

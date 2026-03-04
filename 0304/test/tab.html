@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>탭 메뉴 예제</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+
+        .tab-menu {
+            display: flex;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: transparent;
+            cursor: pointer;
+            border: none;
+        }
+
+        .tab-btn.active {
+            background: #333;
+            color: white;
+        }
+
+        .tab-content {
+            border: 1px solid #ccc;
+            padding: 30px;
+            min-height: 150px;
+            position: relative;
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .content.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tab-menu">
+        <button class="tab-btn active" data-tab="tab1">1번 탭</button>
+        <button class="tab-btn" data-tab="tab2">2번 탭</button>
+        <button class="tab-btn" data-tab="tab3">3번 탭</button>
+    </div>
+
+    <div class="tab-content">
+
+        <div id="tab1" class="content active">
+            <h2>1번 탭 내용</h2>
+            <p>첫 번째 탭입니다.</p>
+        </div>
+
+        <div id="tab2" class="content">
+            <h2>2번 탭 내용</h2>
+            <p>두 번째 탭입니다.</p>
+        </div>
+
+        <div id="tab3" class="content">
+            <h2>3번 탭 내용</h2>
+            <p>세 번째 탭입니다.</p>
+        </div>
+
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.content');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+
+                buttons.forEach(b => b.classList.remove('active'));
+
+                contents.forEach(c => c.classList.remove('active'));
+
+                btn.classList.add('active');
+
+                const target = btn.dataset.tab;
+                document.getElementById(target).classList.add('active');
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>

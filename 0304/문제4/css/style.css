@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.contents {
+    width: 326px;
+    margin: 80px auto;
+    height: 800px;
+}
+
+.c_group1 {
+    width: 326px;
+    height: 425px;
+    float: left;
+}
+
+.pop_slide {
+    width: 326px;
+    height: 338px;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.slick-slider {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slick-slider li {
+    list-style: none;
+    width: 100%;
+    height: 385px;
+}
+
+.slick-slider li a {
+    display: block;
+
+
+}
+
+.slick-slider li a img {
+    display: block;
+
+}
+
+.slick-slider:not(.slick-initialized) li:not(:first-child) {
+    display: none;
+}
+
+.slick-slider:not(.slick-initialized) li:first-child {
+    display: block;
+}
+
+.slick-slider .slick-list,
+.slick-slider .slick-track {
+    height: 385px;
+}
+
+.slick-slider .slick-slide {
+    height: 385px;
+}
+
+.slide_header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+
+.slide_but {
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.slide_but>p {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 5px;
+}
+
+.slide_but>p>a {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-top: 14px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.slide_but #total-slides {
+    color: gray;
+}
+
+.slide_but>p>a.prev {
+    background: url(../images/slider_prev.png) no-repeat 0 0;
+}
+
+.slide_but>p>a.pause {
+    background: url(../images/slider_pause.png) no-repeat 0 0;
+}
+
+.slide_but>p>a.pause.on {
+    background: url(../images/slider_play.png) no-repeat 0 0;
+}
+
+.slide_but>p>a.next {
+    background: url(../images/slider_next.png) no-repeat 0 0;
+}
+
+.slide_but>p>a.more {
+    background: url(../images/reserv_more.png) no-repeat 0 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #444444;
+    text-indent: -9999px;
+}

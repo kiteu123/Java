@@ -1,0 +1,54 @@
+$(function () {
+    var slider = $('.slick-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        speed: 500,
+        arrows: false,
+        dots: false,
+        // pauseOnHover: true,
+        // infinite: true,
+        // fade: false,
+        // cssEase: 'ease-in-out',
+    });
+
+    slider.on('init', function (event, slick) {
+        $('#total-slides').text(slick.slideCount);
+        $('#current-slide').text(slick.currentSlide + 1);
+    });
+
+    slider.on('afterChange', function (event, slick, currentSlide) {
+        $('#current-slide').text(slick.currentSlide + 1);
+    });
+
+    // 이전 버튼
+    $('.prev').click(function (e) {
+        e.preventDefault();
+        slider.slick('slickPrev');
+        return false;
+    });
+
+    // 다음 버튼
+    $('.next').click(function (e) {
+        e.preventDefault();
+        slider.slick('slickNext');
+        return false;
+    });
+
+    // 일시정지/재생 버튼
+    var isPaused = false;
+    $('.pause').click(function (e) {
+        e.preventDefault();
+        if (!isPaused) {
+            slider.slick('slickPause');
+            $(this).addClass('on');
+            isPaused = true;
+        } else {
+            slider.slick('slickPlay');
+            $(this).removeClass('on');
+            isPaused = false;
+        }
+        return false;
+    });
+});

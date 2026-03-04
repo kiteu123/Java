@@ -8,6 +8,11 @@ li {
     list-style: none;
 }
 
+body.hidden {
+    overflow: hidden;
+    height: 100%;
+}
+
 .cf:after {
     content: '';
     display: block;
