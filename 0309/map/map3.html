@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kakao Map Example</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        #map {
+            width: 100%;
+            height: 500px;
+        }
+
+        #searchBox {
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Kakao 지도 - 현재위치 + 검색 + 마커</h2>
+
+    <div id="searchBox">
+        <input type="text" id="keyword" placeholder="장소 검색">
+        <button onclick="searchPlaces()">검색</button>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f92e2869b88f2373826e1ec15e5061c&libraries=services"></script>
+
+    <script>
+
+        var mapContainer = document.getElementById('map');
+
+        var mapOption = {
+            center: new kakao.maps.LatLng(37.5665, 126.9780),
+            level: 3
+        };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        var ps = new kakao.maps.services.Places();
+
+        var markers = [];
+
+        var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+
+
+        if (navigator.geolocation) {
+
+            navigator.geolocation.getCurrentPosition(function (position) {
+
+                var lat = position.coords.latitude;
+                var lon = position.coords.longitude;
+
+                var locPosition = new kakao.maps.LatLng(lat, lon);
+
+                map.setCenter(locPosition);
+
+                var marker = new kakao.maps.Marker({
+                    map: map,
+                    position: locPosition
+                });
+
+                var iwContent = '<div style="padding:5px;">현재 위치</div>';
+
+                var infowindow = new kakao.maps.InfoWindow({
+                    content: iwContent
+                });
+
+                infowindow.open(map, marker);
+
+            });
+
+        }
+
+
+        function searchPlaces() {
+
+            var keyword = document.getElementById('keyword').value;
+
+            if (!keyword.replace(/^\s+|\s+$/g, '')) {
+                alert('검색어 입력');
+                return;
+            }
+
+            ps.keywordSearch(keyword, placesSearchCB);
+        }
+
+
+        function placesSearchCB(data, status) {
+
+            if (status === kakao.maps.services.Status.OK) {
+
+                removeMarker();
+
+                var bounds = new kakao.maps.LatLngBounds();
+
+                for (var i = 0; i < data.length; i++) {
+
+                    displayMarker(data[i]);
+
+                    bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+                }
+
+                map.setBounds(bounds);
+            }
+        }
+
+
+        function displayMarker(place) {
+
+            var marker = new kakao.maps.Marker({
+                map: map,
+                position: new kakao.maps.LatLng(place.y, place.x)
+            });
+
+            markers.push(marker);
+
+            kakao.maps.event.addListener(marker, 'click', function () {
+
+                infowindow.setContent(
+                    '<div style="padding:5px;font-size:12px;">'
+                    + place.place_name + '</div>'
+                );
+
+                infowindow.open(map, marker);
+            });
+        }
+
+        function removeMarker() {
+
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+
+            markers = [];
+        }
+
+    </script>
+
+</body>
+
+</html>
