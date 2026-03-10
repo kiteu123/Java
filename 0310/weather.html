@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px 15px;
+        }
+
+        #weather {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>날씨 조회</h2>
+
+    <input type="text" id="city" placeholder="도시 입력 (예: Seoul)">
+    <button onclick="getWeather()">조회</button>
+
+    <div id="weather"></div>
+
+    <script>
+
+        const apiKey = "a1beedffad4f0d07c8d9320d45156669";
+
+        function getWeather() {
+
+            const city = document.getElementById("city").value;
+
+            const url =
+                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=kr`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+
+                    const temp = data.main.temp;
+                    const desc = data.weather[0].description;
+                    const name = data.name;
+
+                    document.getElementById("weather").innerHTML = `
+            <h3>${name} 날씨</h3>
+            온도 : ${temp}°C <br>
+            상태 : ${desc}
+        `;
+                })
+                .catch(error => {
+                    document.getElementById("weather").innerHTML = "도시를 찾을 수 없습니다.";
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
