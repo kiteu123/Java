@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+</head>
+
+<body>
+    <h1 id="text">
+        타이핑 효과 시험
+    </h1>
+    <script>
+        let count = 0;
+        let text1 = $('#text');
+        let msg;
+        let comp;
+
+        function main() {
+            msg = text1.text();
+            // alert(msg);
+            comp = msg.length;
+            tatata();
+        }
+
+        function tatata() {
+            if (count <= comp) {
+                let kkk = msg.substring(0, count);
+                text1.text(kkk);
+                count++;
+                setTimeout(tatata, 100);
+            } else {
+                count = 0;
+                main();
+            }
+        }
+
+        main();
+    </script>
+</body>
+
+</html>
