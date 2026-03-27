@@ -1,0 +1,75 @@
+.accordion-menu-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.accordion-menu-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* 아이템 */
+.accordion-item {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* 헤더 */
+.accordion-header {
+  width: 100%;
+  padding: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.accordion-header:hover {
+  background-color: #f8f9fa;
+}
+
+/* 활성 상태 */
+.accordion-header.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* 아이콘 */
+.accordion-icon {
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* 내용 영역 */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+/* 열림 상태 */
+.accordion-content.open {
+  max-height: 200px;
+}
+
+/* 내부 */
+.accordion-content-inner {
+  padding: 0 16px 16px;
+  color: #555;
+  line-height: 1.6;
+}

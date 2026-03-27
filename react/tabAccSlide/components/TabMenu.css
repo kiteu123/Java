@@ -1,0 +1,92 @@
+.tab-menu-container {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 32px;
+}
+
+.tab-menu-container h2 {
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* 탭 헤더 영역 */
+.tab-headers {
+  display: flex;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* 탭 버튼 */
+.tab-header {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #666;
+  position: relative;
+  transition: all 0.25s ease;
+  border-bottom: 3px solid transparent;
+}
+
+/* hover */
+.tab-header:hover {
+  color: #111;
+  background-color: #f8f9fa;
+}
+
+/* 클릭 효과 */
+.tab-header:active {
+  transform: scale(0.95);
+}
+
+/* 활성 탭 */
+.tab-header.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* 밑줄 애니메이션 */
+.tab-header::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #007bff;
+  transition: width 0.3s ease;
+}
+
+.tab-header.active::after {
+  width: 100%;
+}
+
+/* 콘텐츠 영역 */
+.tab-content {
+  padding: 20px 5px;
+}
+
+/* 내용 패널 */
+.tab-panel {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.7;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
