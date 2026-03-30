@@ -1,0 +1,22 @@
+.TodoItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.content {
+  flex: 1;
+}
+
+.done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.date {
+  font-size: 12px;
+  color: #888;
+}
