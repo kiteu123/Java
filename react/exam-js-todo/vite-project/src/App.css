@@ -1,0 +1,110 @@
+/* 전체 레이아웃 */
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 메인 박스 */
+.main {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+/* 카드 느낌 */
+.panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.panel h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* 필터 버튼 */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.filters button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #e5e7eb;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filters button:hover {
+  background: #6366f1;
+  color: white;
+}
+
+/* 리스트 */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: 0.2s;
+}
+
+.todo-list li:hover {
+  background: #f3f4f6;
+}
+
+/* 완료 상태 */
+.todo-list li.done span {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+/* 텍스트 */
+.todo-list span {
+  cursor: pointer;
+}
+
+/* 버튼 영역 */
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.actions button {
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* 수정 버튼 */
+.actions button:first-child {
+  background: #3b82f6;
+  color: white;
+}
+
+/* 삭제 버튼 */
+.actions button:last-child {
+  background: #ef4444;
+  color: white;
+}

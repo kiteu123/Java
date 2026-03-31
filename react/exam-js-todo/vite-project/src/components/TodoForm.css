@@ -1,0 +1,44 @@
+.todo-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: 0.2s;
+}
+
+.todo-form input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* 기본 버튼 */
+.todo-form button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #6366f1;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.todo-form button:hover {
+  background: #4f46e5;
+}
+
+/* 취소 버튼 */
+.todo-form .ghost {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.todo-form .ghost:hover {
+  background: #d1d5db;
+}
